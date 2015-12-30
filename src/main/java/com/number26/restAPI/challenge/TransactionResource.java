@@ -42,7 +42,7 @@ public class TransactionResource {
 
     @GET
     @Path("/types/{type}")
-    public Response get(@PathParam("type") String type) {
+    public Response getType(@PathParam("type") String type) {
     	List<Long> ids = new ArrayList<Long>();
     	Collection<Transaction> allTransactions = transactions.values();
     	Long i = (long) 1;
@@ -57,7 +57,7 @@ public class TransactionResource {
     
     @GET
     @Path("/sum/{id}")
-    public Response get(@PathParam("id") long id) {
+    public Response getSum(@PathParam("id") long id) {
     	double sum = 0;
     	Transaction transaction = transactions.get(id);
     	if (transaction == null) {
