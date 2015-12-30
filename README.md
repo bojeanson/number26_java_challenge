@@ -6,32 +6,20 @@ A RESTful web service that stores some transactions (in memory is fine) and retu
 # Use cases
 **PUT /transactionservice/transaction/$transaction_id**
 
-Body:
-'''
-{ "amount":double,"type":string,"parent_id":long }
-'''
+Body: { "amount":double,"type":string,"parent_id":long }
 
 **GET /transactionservice/transaction/$transaction_id**
 
-Returns:
-'''
-{ "amount":double,"type":string,"parent_id":long }
-'''
+Returns: { "amount":double,"type":string,"parent_id":long }
 
 **GET /transactionservice/types/$type**
 
-Returns: 
-'''
-[ long, long, .... ] 
-'''
+Returns: [ long, long, .... ] 
 A json list of all transaction ids that share the same type $type.
 
 **GET /transactionservice/sum/$transaction_id **
 
-Returns:
-'''
-{ "sum", double }
-'''
+Returns: { "sum", double }
 A sum of all transactions that are transitively linked by their parent_id to $transaction_id.
 
 # Installation & Deployement
@@ -40,7 +28,7 @@ A sum of all transactions that are transitively linked by their parent_id to $tr
 - Eclipse (Kepler)
 - Apache Tomcat 7
 
-Open the project in Eclipse and build it with maven ('''mvn clean install'''). Then export the project to WAR format and deploy it with tomcat.
+Open the project in Eclipse and build it with maven (mvn clean install). Then export the project to WAR format and deploy it with tomcat.
 
 # Request
 With '''curl''' :
